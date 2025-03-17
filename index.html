@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="style.css">
+	<title>KinFit</title>
+</head>
+
+<body>
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand"><i class='bx bxs-smile icon'></i> KinFit</a>
+		<ul class="side-menu">
+			<li><a href="#" class="active"><i class='bx bxs-dashboard icon'></i> Dashboard</a></li>
+			<li class="divider" data-text="main">Main</li>
+			<li>
+				<a href="#"><i class='bx bxs-inbox icon'></i> Analytics <i
+						class='bx bx-chevron-right icon-right'></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#">Real Time Alerts</a></li>
+					<li><a href="#">Equipment Status</a></li>
+					<li><a href="#">Total Energy Generated</a></li>
+				</ul>
+			</li>
+			<li><a href="members.html"><i class='bx bxs-widget icon'></i> Members</a></li>
+			<li><a href="#"><i class='bx bxs-widget icon'></i> Rewards</a></li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+	<!-- NAVBAR -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu toggle-sidebar'></i>
+			<form action="#">
+			</form>
+			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+					alt="">
+				<ul class="profile-link">
+					<li><a href="#"><i class='bx bxs-user-circle icon'></i> Profile</a></li>
+					<li><a href="#"><i class='bx bxs-cog'></i> Settings</a></li>
+					<li><a href="login.html"><i class='bx bxs-log-out-circle'></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<ul class="breadcrumbs">
+				<li><a href="index.html">Home</a></li>
+				<li class="divider">/</li>
+				<li><a href="#" class="active">Dashboard</a></li>
+			</ul>
+			<div class="info-data">
+				<a href="page1.html" class="card-link">
+					<div class="card">
+						<div class="head">
+							<div>
+								<h2>Stationary Bike</h2>
+							</div>
+							<i class='bx bx-trending-up icon'></i>
+						</div>
+						<span class="progress" data-value="40%"></span>
+						<span class="label">Loading...</span>
+					</div>
+				</a>
+				<a href="page2.html" class="card-link">
+					<div class="card">
+						<div class="head">
+							<div>
+								<h2>Step Runner</h2>
+							</div>
+							<i class='bx bx-trending-down icon down'></i>
+						</div>
+						<span class="progress" data-value="60%"></span>
+						<span class="label">Loading...</span>
+					</div>
+				</a>
+				<a href="page3.html" class="card-link">
+					<div class="card">
+						<div class="head">
+							<div>
+								<h2>Treadmill</h2>
+							</div>
+							<i class='bx bx-trending-up icon'></i>
+						</div>
+						<span class="progress" data-value="30%"></span>
+						<span class="label">Loading...</span>
+					</div>
+				</a>
+			</div>
+			<div class="data">
+				<div class="content-data">
+					<div class="head">
+						<h3>Energy Report</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="#">Edit</a></li>
+								<li><a href="#">Save</a></li>
+								<li><a href="#">Remove</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chart">
+						<div id="chart"></div>
+					</div>
+				</div>
+				<div class="content-data">
+					<div class="content-data">
+						<div class="head">
+							<h3>Leaderboard</h3>
+							<div class="menu">
+								<i class='bx bx-dots-horizontal-rounded icon'></i>
+								<ul class="menu-link">
+									<li><a href="#">Refresh</a></li>
+									<li><a href="#">Export</a></li>
+									<li><a href="#">Settings</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="leaderboard-box">
+							<p class="day"><span>Top Contributors</span></p>
+							<div class="player">
+								<img src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
+								<div class="details">
+									<span class="username">John Doe</span>
+									<span class="score">Loading...</span>
+								</div>
+							</div>
+							<div class="player">
+								<img src="https://randomuser.me/api/portraits/women/2.jpg" alt="">
+								<div class="details">
+									<span class="username">Jane Smith</span>
+									<span class="score">Loading...</span>
+								</div>
+							</div>
+							<div class="player">
+								<img src="https://randomuser.me/api/portraits/men/3.jpg" alt="">
+								<div class="details">
+									<span class="username">Michael Brown</span>
+									<span class="score">Loading...</span>
+								</div>
+							</div>
+							<div class="player">
+								<img src="https://randomuser.me/api/portraits/women/4.jpg" alt="">
+								<div class="details">
+									<span class="username">Emily Davis</span>
+									<span class="score">Loading...</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- NAVBAR -->
+
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+	<script src="script.js"></script>
+	<script>
+		// Fetch live sensor data from the backend and update dashboard cards
+		fetch('https://pulsewatt-backend.onrender.com/data')
+			.then(response => response.json())
+			.then(data => {
+				// If the server returns a single object instead of an array, wrap it
+				if (!Array.isArray(data)) {
+					data = [data];
+				}
+
+				// Loop over each sensor record
+				data.forEach(sensor => {
+					if (sensor.equipmentID === 1) {
+						// Update Stationary Bike card
+						const bikeCard = document.querySelector('a.card-link[href="page1.html"] .card');
+						if (bikeCard) {
+							bikeCard.querySelector('h2').textContent = "Stationary Bike (" + sensor.rpm + " RPM)";
+							bikeCard.querySelector('.label').textContent = sensor.voltage + " V";
+						}
+					} else if (sensor.equipmentID === 2) {
+						// Update Step Runner card
+						const stepCard = document.querySelector('a.card-link[href="page2.html"] .card');
+						if (stepCard) {
+							stepCard.querySelector('h2').textContent = "Step Runner (" + sensor.rpm + " RPM)";
+							stepCard.querySelector('.label').textContent = sensor.voltage + " V";
+						}
+					} else if (sensor.equipmentID === 3) {
+						// Update Treadmill card
+						const treadmillCard = document.querySelector('a.card-link[href="page3.html"] .card');
+						if (treadmillCard) {
+							treadmillCard.querySelector('h2').textContent = "Treadmill (" + sensor.rpm + " RPM)";
+							treadmillCard.querySelector('.label').textContent = sensor.voltage + " V";
+						}
+					}
+				});
+			})
+			.catch(err => console.error("Error fetching data:", err));
+	</script>
+</body>
+
+</html>

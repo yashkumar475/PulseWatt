@@ -3,31 +3,48 @@ async function fetchData() {
         const response = await fetch('https://pulsewatt-backend.onrender.com/data');
         const data = await response.json();
 
-        if (data.error) {
-            console.error("Error:", data.error);
+        if (!data) {
+            console.error("Error: Received null or undefined data");
             return;
         }
 
-        // Get table body and clear previous data
-        const tableBody = document.getElementById('data-body');
-        tableBody.innerHTML = ""; 
+        // Ensure data is always an array
+        const dataArray = Array.isArray(data) ? data : [data];
 
-        // Update table data
-        data.forEach((item, index) => {
-            const row = `<tr>
-                <td>${index + 1}</td>
-                <td>${item.equipmentID}</td>
-                <td>${item.rpm}</td>
-                <td>${item.voltage}</td>
-                <td>${item.timestamp}</td>
-                <td>${item.temperature}</td>
-                <td>${item.current}</td>
-            </tr>`;
-            tableBody.innerHTML += row;
-        });
+        appendRows(dataArray); // Append new data without clearing the table
     } catch (error) {
         console.error('Error fetching data:', error);
     }
 }
-// Fetch data every 3 second
+
+// Store seen timestamps to prevent duplicate rows
+const seenTimestamps = new Set();
+
+function appendRows(dataArray) {
+    const tbody = document.getElementById('data-body');
+
+    dataArray.forEach(item => {
+        const uniqueKey = `${item.Equipment_ID}-${item.Timestamp}`;
+
+        if (!seenTimestamps.has(uniqueKey)) {
+            seenTimestamps.add(uniqueKey);
+
+            // Create a new row
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${tbody.rows.length + 1}</td>
+                <td>${item.Equipment_ID}</td>
+                <td>${item.RPM_rev_min}</td>
+                <td>${item.Voltage_V}</td>
+                <td>${item.Timestamp}</td>
+                <td>${item.Temperature_C}</td>
+                <td>${item.Current_A}</td>
+                <td>${item.Energy_Wh}</td>
+            `;
+            tbody.appendChild(row);
+        }
+    });
+}
+
+// Fetch data every 3 seconds
 setInterval(fetchData, 3000);
